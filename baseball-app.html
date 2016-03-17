@@ -1,0 +1,63 @@
+<template name="main">
+  <h1>Baseball App</h1>
+  <main>
+   {{>Template.dynamic template=content}}
+ </main>
+</template>
+
+<template name="splash">
+  <h1>You're on the Splash Page</h1>
+  <a href="/instructions"><button>Instructions</button></a>
+</template>
+
+<template name="instructions">
+  <p>
+    ABV Baseball is an unique baseball simulator.
+    First, you and a competitor will select two
+    batters to compete against a single pitcher.
+    We will simulate batting outcomes over 27 outs
+    and score each batter based on outs, strike outs,
+    walks, doubles, triples and home runs. The winner
+    receives an immense sense of pride and honor, the
+    loser has to drink for 5 seconds.
+  </p>
+    <a href="/home"><button>Play Ball!</button></a>
+</template>
+
+<template name="home">
+  <p>
+    Get excited! Time to pick your batters.
+  </p>
+    <a href="/batters"><button>Pick Batters</button></a>
+</template>
+
+<template name="batters">
+  <div>
+    <h1>Batters</h1>
+    {{#each batters}}
+      <p>{{firstName}} {{lastName}}</p>
+    {{/each}}
+  </div>
+  <a href="/home-pitcher"><button>Done Picking</button></a>
+</template>
+
+<template name="home-pitcher">
+  <p>Generate Pitcher</p>
+  <a href="/game"><button>Start Game!</button></a>
+</template>
+
+<template name="game">
+  <p>This is the game.</p>
+  <a href="/results"><button>Results</button></a>
+</template>
+
+<template name="results">
+  <p>These are your results</p>
+  <a href="/end"><button>Next</button></a>
+</template>
+
+<template name="end">
+  <p>Do you want to continue?</p>
+  <a href="/home"><button>Yes</button></a>
+  <a href="#"><button>No</button></a>
+</template>
