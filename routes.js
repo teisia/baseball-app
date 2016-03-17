@@ -22,14 +22,14 @@ FlowRouter.route('/batters', {
   }
 });
 
-FlowRouter.route('/home-pitcher', {
+FlowRouter.route('/pitcher', {
   action:function() {
-    BlazeLayout.render("main", {content: "home-pitcher"})
+    BlazeLayout.render("main", {content: "pitcher"})
   }
 });
 
 FlowRouter.route('/game', {
-  action:function() {
+  action:function(gameObject) {
     BlazeLayout.render("main", {content: "game"})
   }
 });

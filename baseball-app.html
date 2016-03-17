@@ -38,16 +38,28 @@
       <p>{{firstName}} {{lastName}}</p>
     {{/each}}
   </div>
-  <a href="/home-pitcher"><button>Done Picking</button></a>
+  <a href="/pitcher"><button>Done Picking</button></a>
 </template>
 
-<template name="home-pitcher">
-  <p>Generate Pitcher</p>
-  <a href="/game"><button>Start Game!</button></a>
+<template name="pitcher">
+  <h1>Pitchers</h1>
+  <div>
+    {{#each pitcher}}
+      <p>{{firstName}} {{lastName}}</p>
+    {{/each}}
+  </div>
+  <a href="/game"><button id="runGame">Start Game!</button></a>
 </template>
 
 <template name="game">
   <p>This is the game.</p>
+  <div>
+    {{#each avg}}
+      <p>{{category}}</p>
+      <p>AB: {{AB}}</p>
+      <p>Hits: {{H}}</p>
+    {{/each}}
+  </div>
   <a href="/results"><button>Results</button></a>
 </template>
 
